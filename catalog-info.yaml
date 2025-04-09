@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ia6ecyybn-go-gitops
+  description: This is GitOps manifest for ia6ecyybn-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ia6ecyybn-go
+    backstage.io/kubernetes-id: ia6ecyybn-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ia6ecyybn-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ia6ecyybn-go
